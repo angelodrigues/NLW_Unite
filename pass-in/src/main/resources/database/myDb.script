@@ -29,7 +29,7 @@ SET FILES NIO TRUE
 SET FILES NIO SIZE 256
 SET FILES LOG TRUE
 SET FILES LOG SIZE 50
-SET FILES CHECK 1042
+SET FILES CHECK 4578
 SET DATABASE COLLATION "SQL_TEXT" PAD SPACE
 CREATE USER SA PASSWORD DIGEST 'd41d8cd98f00b204e9800998ecf8427e'
 ALTER USER SA SET LOCAL TRUE
@@ -58,3 +58,9 @@ INSERT INTO "flyway_schema_history" VALUES(1,'1','create-table-events','SQL','V1
 INSERT INTO "flyway_schema_history" VALUES(2,'2','create-table-attendees','SQL','V2__create-table-attendees.sql',1911608110,'SA','2024-04-03 10:39:19.996109',5,'1')
 INSERT INTO "flyway_schema_history" VALUES(3,'3','create-table-checkins','SQL','V3__create-table-checkins.sql',-1946877873,'SA','2024-04-03 10:39:20.022121',7,'1')
 INSERT INTO "flyway_schema_history" VALUES(4,'4','create-indexes','SQL','V4__create-indexes.sql',-1697146183,'SA','2024-04-03 10:39:20.052691',2,'1')
+INSERT INTO EVENTS VALUES('0fda76cc-1593-4c92-b545-02b636cd4696','TESTE','VMETRIX TESTE B','teste',10000)
+INSERT INTO EVENTS VALUES('40c0f37b-8b99-4fd3-9223-c024f7e9b901','Rocketseat NLW','Aprenda Java de forma gratuita','',500)
+INSERT INTO EVENTS VALUES('4c8a2439-7c28-4cec-b43a-e70f3e8151c5','A','VMETRIX TESTE B','a',10000)
+INSERT INTO EVENTS VALUES('4ca2cb83-3bef-46fa-bea4-95d97c1f22c1','TESTE ANGELO','VMETRIX TESTE B','teste-angelo',10000)
+INSERT INTO EVENTS VALUES('c87ab4e2-f619-4282-a449-2c0f0394fb01','ASDASD','VMETRIX TESTE B','asdasd',10000)
+INSERT INTO ATTENDEES VALUES('c87ab4e2-f619-4282-a449-2c0f0394fb01','Angelo Barcelos Rodrigues','angelo@gmail.com','4ca2cb83-3bef-46fa-bea4-95d97c1f22c1',NULL)
