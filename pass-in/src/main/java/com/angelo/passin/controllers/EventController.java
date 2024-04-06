@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
 
+import com.angelo.passin.dto.attendee.AttendeeIdDTO;
+import com.angelo.passin.dto.attendee.AttendeeRequestDTO;
 import com.angelo.passin.dto.attendee.AttendeesListResponseDTO;
 import com.angelo.passin.dto.event.EventIdDTO;
 import com.angelo.passin.dto.event.EventRequestDTO;
@@ -46,4 +48,10 @@ public class EventController {
         return ResponseEntity.ok(attendeesListResponseDTO);
     }
 
+    @PostMapping("/{eventId}/attendees")
+    public ResponseEntity<AttendeeIdDTO> registerParticipant(@PathVariable String eventId,@RequestBody AttendeeRequestDTO body, UriComponentsBuilder uriComponentsBuilder){
+        AttendeeIdDTO attendeeIdDTO = this.eventService.registerAttendeeOnEvent(eventId, body);
+        var uri = uriComponentsBuilder.path("/attendees/{attendeeId}/badge").buildAndExpand(attendeeIdDTO.attendeeId()).toUri();
+        return ResponseEntity.created(uri).body(attendeeIdDTO);
+    }
 }
