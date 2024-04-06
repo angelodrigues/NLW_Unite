@@ -25,7 +25,7 @@ public class AttendeeController {
         return ResponseEntity.ok(response);
     }
 
-    @PostMapping("/{attendeeId}/check-in}")
+    @PostMapping("/{attendeeId}/check-in")
     public ResponseEntity registerCheckIn(@PathVariable String attendeeId, UriComponentsBuilder uriComponentsBuilder){
         this.attendeeService.checkInAttendee(attendeeId);
 
